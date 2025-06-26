@@ -1,0 +1,5 @@
+git init
+git remote add origin https://github.com/bachesh/p2p-arbitrage-bot.git
+git add .
+git commit -m "Initial bot version"
+git push -u origin master

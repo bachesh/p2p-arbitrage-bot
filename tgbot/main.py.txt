@@ -1,0 +1,17 @@
+import telebot
+from config import TOKEN
+
+bot = telebot.TeleBot(TOKEN)
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.send_message(message.chat.id, "\ud83d\udcc8 P2P Arbitrage Bot запущено! Виберіть біржі та банки для аналізу.")
+
+# Тут буде реалізація пошуку зв\u2019язок (dummy приклад)
+@bot.message_handler(commands=['find'])
+def find_opportunities(message):
+    bot.send_message(message.chat.id, "\u26a1\ufe0f Пошук вигідних P2P зв\u2019язок з мін. профітом 3%...")
+    # TODO: додати реальний аналіз
+    bot.send_message(message.chat.id, "\ud83d\udcb0 Знайдено: Binance (buy Mono) -> OKX (sell Privat) = +3.4% чистими")
+
+bot.polling()
